@@ -1,13 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as chrome_options
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
 import pymysql
 from config import host, user, password, db_name
 
 options = chrome_options()
-driver = webdriver.Chrome(executable_path="C:\\Users\\mihsa\\PycharmProjects\\"
-                                          "pythonProject\\chromedriver\\chromedriver.exe", options=options)
+s = Service(executable_path="C:\\Users\\mihsa\\PycharmProjects\\"
+            "pythonProject\\chromedriver\\chromedriver.exe")
+driver = webdriver.Chrome(service=s, options=options)
 
 
 def go_url():
